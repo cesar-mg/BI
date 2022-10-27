@@ -5,6 +5,7 @@ from fastapi import FastAPI
 import pandas as pd
 from joblib import dump, load
 from DataModel import DataModel
+from DataModelPredict import DataModelPredict
 import os
 from sklearn.metrics import r2_score as r2
 app = FastAPI()
@@ -20,7 +21,7 @@ def read_item(item_id: int, q: Optional[str] = None):
    return {"item_id": item_id, "q": q}
 
 @app.post("/predict")
-def make_predictions(dataModel: DataModel):
+def make_predictions(dataModel: DataModelPredict):
     df = pd.DataFrame(dataModel.dict(), columns=dataModel.dict().keys(), index=[0])
     df.columns = dataModel.columns()
     print("YA CASI")
@@ -29,6 +30,7 @@ def make_predictions(dataModel: DataModel):
     result = model.predict(df)
     print(result)
     return {"Prediction": result[0]}
+    
 @app.post("/coefficient")
 def calculate_r2(dataModels: List[DataModel]):
    rows = []
