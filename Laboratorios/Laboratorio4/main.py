@@ -1,9 +1,12 @@
-from typing import Optional
+from cgitb import reset
+from telnetlib import WONT
+from typing import Optional, List
 from fastapi import FastAPI
 import pandas as pd
 from joblib import dump, load
 from DataModel import DataModel
 import os
+from sklearn.metrics import r2_score as r2
 app = FastAPI()
 
 
@@ -25,4 +28,24 @@ def make_predictions(dataModel: DataModel):
     print("AYDUA")
     result = model.predict(df)
     print(result)
-    return result
+    return {"Prediction": result[0]}
+@app.post("/coefficient")
+def calculate_r2(dataModels: List[DataModel]):
+   rows = []
+   for dm in dataModels:
+      rows.append(dm.dict())
+   print("DSA")
+   df = pd.DataFrame(rows)
+   df.columns = dataModels[0].columns()
+   print(df)
+   print("AAA")
+   X = df.drop("admission_points", axis = 1)
+   print("CASII")
+   Y = df["admission_points"]
+   print("BOMBAA")
+   model = load("assets/modelo.joblib")
+   print("CERCAAA")
+   print(Y)
+   y = model.predict(X)
+   result = r2(y,Y)
+   return {"R2":result}
