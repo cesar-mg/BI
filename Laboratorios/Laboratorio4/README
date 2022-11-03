@@ -1,0 +1,21 @@
+Laboratorio 4 Inteligencia de Negocios - Grupo 25.
+Gustavo Tabima
+César Luis Moreno
+Juan Nuñez
+
+1. Ejecutar uvicorn main:app --reload
+
+2. Entrar con el navegador a la dirección http://127.0.0.1:8000/docs#
+
+3. Con postman por ejemplo mandar una orden Post con entrada Json de la siguiente forma con los datos necesarios
+{
+"serial_no":1
+"gre_score":299,
+"toefl_score":3,
+"university_rating":4,
+"sop":_3.5,
+"lor":8.3,
+"cgpa":0,
+"research":1
+}
+etc etc (los datos de arriba no son reales ni funcionan como ejemplo real del negocio)
