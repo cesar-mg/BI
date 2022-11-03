@@ -1,17 +1,17 @@
 from pydantic import BaseModel
-
+from typing import Union
 class DataModel(BaseModel):
 
 # Estas varibles permiten que la librería pydantic haga el parseo entre el Json recibido y el modelo declarado.
-    serial_no: float
-    gre_score: float
-    toefl_score: float
-    university_rating: float
-    sop: float
-    lor: float 
-    cgpa: float
-    research: float
-    admission_points: float
+    serial_no: Union[float,str]
+    gre_score: Union[float,str]
+    toefl_score: Union[float,str]
+    university_rating: Union[float,str]
+    sop: Union[float,str]
+    lor: Union[float,str] 
+    cgpa: Union[float,str]
+    research: Union[float,str]
+    admission_points: Union[float,str]
 
     
 #Esta función retorna los nombres de las columnas correspondientes con el modelo exportado en joblib.
