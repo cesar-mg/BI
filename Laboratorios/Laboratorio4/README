@@ -1,4 +1,4 @@
-Laboratorio 4 Inteligencia de Negocios - Grupo 25.
+Laboratorio 4 Inteligencia de Negocios - Grupo 25. Creado con base al laboratorio 3 donde la creación de dicho pipe line se maneja en la sección 4.
 Gustavo Tabima
 César Luis Moreno
 Juan Nuñez
@@ -19,3 +19,6 @@ Juan Nuñez
 "research":1
 }
 etc etc (los datos de arriba no son reales ni funcionan como ejemplo real del negocio)
+
+NOTA
+VERIFIQUE QUE LA VERSIÓN DE JOBLIB UTILIZADA CORRESPONDE A 1.2.0 PUES ESTA FUE LA MANEJANDA AL MOMENTO DE SU CREACIÓN.
