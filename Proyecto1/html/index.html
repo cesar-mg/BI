@@ -7,7 +7,7 @@
 <style>
    body {
 /* Location of the image */
-background-image: url("BackgroundV.svg");
+background:url("{{ url_for( 'static', path ='BackgroundV.svg') }}");
 
 /* Background image is centered vertically and horizontally at all times */
 background-position: center center;
@@ -27,8 +27,8 @@ background-size: cover;
 while the background image is loading */
 background-color: #464646;
 }
-@font-face { font-family: SGBold; font-weight: bold; src: url('fonts/SpaceGrotesk-Bold.ttf'); } 
-@font-face { font-family: SGMedium; font-weight: medium; src: url('fonts/SpaceGrotesk-Medium.ttf');}
+@font-face { font-family: SGBold; font-weight: bold; src: url("{{ url_for( 'static', path ='fonts/SpaceGrotesk-Bold.ttf') }}"); } 
+@font-face { font-family: SGMedium; font-weight: medium; src: url("{{ url_for( 'static', path ='fonts/SpaceGrotesk-Medium.ttf') }}");}
     .box {
         background-color: aqua;
     }
@@ -81,7 +81,7 @@ background-color: #464646;
       
     
     }
-    textarea{
+    form{
         
         resize: none;       
         font-family: SGMedium;
@@ -92,7 +92,7 @@ background-color: #464646;
         
         position: absolute;
         top: 80%;
-        left: 30%;
+        left: 46%;
         transform: translate(0, -50%);
         margin: -25px 0 0 -25px;
     }

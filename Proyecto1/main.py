@@ -1,15 +1,25 @@
 from typing import Optional
 
-from fastapi import FastAPI, Body, Request
+from fastapi import FastAPI, Body, Request, Form
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import pandas as pd
+from joblib import dump, load
+import os
+from fastapi import FastAPI, HTTPException
 app = FastAPI()
 
 template = Jinja2Templates(directory="html")
+app.mount("/static", StaticFiles(directory="html/static"), name = "static")
 @app.get("/")
 def read_root(request: Request):
    return template.TemplateResponse("index.html",{"request":request})
+
 @app.post("/submit")
-def read_root(request: Request):
+def handle_form(request:Request, cajita: str = Form(...)):
+   model = load("html/static/assets/modelo.joblib")
+   print(cajita)
+   #result = model.predict(cajita)
    return template.TemplateResponse("index.html",{"request":request})
 
 
