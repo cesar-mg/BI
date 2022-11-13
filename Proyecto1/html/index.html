@@ -39,6 +39,16 @@ background-color: #464646;
         align-items: center;
         padding-left: 100px;
     }
+    .Respuesta {
+        font-family: SGBold;
+        text-align: center;
+        color: aliceblue;
+        align-items: center;
+        padding-left: 100px;
+        position: absolute;
+        top: 40%;
+        left: -6%;
+    }
     .TextoNormi {
         font-family: SGMedium;
         text-align: center;
@@ -130,13 +140,15 @@ background-color: #464646;
     
     <div class="col-sm-12" >
         <label for="freeform">Inserte aquí el mensaje:</label>
-        <br>
         
         <form action = "/submit" method = "post"  rows="5" cols="50" class="col-sm-12">
         <input type = "text" name = "cajita">
         <input type = "submit">
         </form>
 
+    </div>
+    <div class="Respuesta" >
+        <label for="freeform">El resultado del mensaje es: {{msg}}</label>
     </div> 
  
     
