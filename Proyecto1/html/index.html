@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<title>Front Proyecto 1 BI uwu</title>
+<style>
+   body {
+/* Location of the image */
+background-image: url("BackgroundV.svg");
+
+/* Background image is centered vertically and horizontally at all times */
+background-position: center center;
+
+/* Background image doesn't tile */
+background-repeat: no-repeat;
+
+/* Background image is fixed in the viewport so that it doesn't move when
+the content's height is greater than the image's height */
+background-attachment: fixed;
+
+/* This is what makes the background image rescale based
+on the container's size */
+background-size: cover;
+
+/* Set a background color that will be displayed
+while the background image is loading */
+background-color: #464646;
+}
+@font-face { font-family: SGBold; font-weight: bold; src: url('fonts/SpaceGrotesk-Bold.ttf'); } 
+@font-face { font-family: SGMedium; font-weight: medium; src: url('fonts/SpaceGrotesk-Medium.ttf');}
+    .box {
+        background-color: aqua;
+    }
+    .TextoDeTitulo {
+        font-family: SGBold;
+        text-align: center;
+        color: aliceblue;
+        align-items: center;
+        padding-left: 100px;
+    }
+    .TextoNormi {
+        font-family: SGMedium;
+        text-align: center;
+        color: aliceblue;
+        align-items: center;
+        padding-left: 100px;
+        padding-bottom: 20px;
+    }
+
+ 
+    div{
+        align-content: center;
+        align-self: center;
+        vertical-align: auto;
+  
+    }
+    .cajaInternaMensaje{
+        padding-bottom: 30px;
+        align-items: center;
+        text-align: center;
+        padding-left: 100px;
+        font-family: SGMedium;
+        text-align: center;
+        color: black;
+        width: 600px;
+        height: 600px;
+        position: fixed;
+        margin: auto;
+   
+        
+    }
+    .divdeCaja{
+ 
+        
+        font-family: SGMedium;
+        align-items: center;
+        position: relative;
+        overflow-x: hidden;
+         overflow-y: auto;
+      
+    
+    }
+    textarea{
+        
+        resize: none;       
+        font-family: SGMedium;
+        text-align: justify;
+        color: aliceblue;
+        width: 600px;
+        height: 600px;
+        
+        position: absolute;
+        top: 80%;
+        left: 30%;
+        transform: translate(0, -50%);
+        margin: -25px 0 0 -25px;
+    }
+    label{
+        text-align: justify;
+        padding-left: 700px;
+        font-family: SGMedium;
+  
+        color: aliceblue;
+        width: 60px;
+        height: 60px;
+        
+       
+    }
+    #divBoton{
+        padding-left: 700px;
+        padding-top: 10px;
+    }
+    #cajita{
+        resize: none;
+        color: black;
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    
+<div class="row">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="col-sm-12">
+    <H1 class ="TextoDeTitulo">Bienvenido Usuario a nuestra API de detección<br> de posts  de emergencia para Reddit.</H1>
+    <H2 class="TextoNormi"> Por favor introduce en la siguiente caja el mensaje y presiona el botón <br> para saber si se trata de un mensaje de emergencia </H2>
+    </div >
+    
+    <div class="col-sm-12" >
+        <label for="freeform">Inserte aquí el mensaje:</label>
+        <br>
+        
+        <form action = "/submit" method = "post"  rows="5" cols="50" class="col-sm-12">
+        <input type = "text" name = "cajita">
+        <input type = "submit">
+        </form>
+
+    </div> 
+ 
+    
+    
+
+</div>
+
+</body>
+</html>
