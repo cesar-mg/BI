@@ -7,7 +7,7 @@ import pandas as pd
 from joblib import dump, load
 import os
 from fastapi import FastAPI, HTTPException
-from preprocessing import process
+from preprocessing import process, process_big, tokenize
 import shutil
 app = FastAPI()
 
@@ -34,11 +34,16 @@ async def handle_form(request:Request, file: UploadFile = File(...)):
    with open("file.csv","wb") as buffer:
       shutil.copyfileobj(file.file,buffer)
    df=pd.read_csv('file.csv', sep=',', encoding = 'utf-8')
-   df["text"] = df["text"].apply(process)
+   df["text"] = df["text"].apply(process_big)
    model = load("html/static/assets/modelo.joblib")
-   prediction = model.predict(df["text"])
+   print(df.head(5))
+   df = df.dropna()
+   df['text'] = df['text'].apply(lambda x: ' '.join(map(str, x)))
+   X = tokenize(df["text"])
+   prediction = model.predict(X)
+
    df["Predicted"] = prediction
-   df.to_csv('/Predictions/DatosProcesados3.csv',encoding='utf-8')
+   df.to_csv('Prediccion.csv',encoding='utf-8')
    return template.TemplateResponse("index2.html",{"request":request})
 
 @app.get("/file_analisis")
