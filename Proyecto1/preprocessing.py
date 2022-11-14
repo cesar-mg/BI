@@ -13,6 +13,7 @@ from nltk.stem import WordNetLemmatizer
 
 from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.feature_extraction.text import CountVectorizer, HashingVectorizer
+from eli5.sklearn import InvertableHashingVectorizer
 from joblib import load
 # librería Natural Language Toolkit, usada para trabajar con textos 
 import nltk
@@ -94,9 +95,8 @@ def stem_and_lemmatize(words):
 def process(string):
     pp = preprocessing(string)
     pp = stem_and_lemmatize(pp)
-    manejador = load("html/static/assets/tokenizador.joblib")
+    tokenizador = load("html/static/assets/tokenizador.joblib")
     
     df = pd.DataFrame([string], columns=["processed"])
-    data = manejador.fit_transform(df["processed"])
+    data = tokenizador.fit_transform(df["processed"])
     return data
-

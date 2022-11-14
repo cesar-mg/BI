@@ -49,6 +49,26 @@ background-color: #464646;
         top: 40%;
         left: -6%;
     }
+    .Archivo {
+        font-family: SGBold;
+        text-align: center;
+        color: aliceblue;
+        align-items: center;
+        padding-left: 100px;
+        position: absolute;
+        top: 45%;
+        left: -6%;
+    }
+    .File {
+        font-family: SGBold;
+        text-align: center;
+        color: aliceblue;
+        align-items: center;
+        padding-left: 100px;
+        position: absolute;
+        top: 57%;
+        left: 46%;
+    }
     .TextoNormi {
         font-family: SGMedium;
         text-align: center;
@@ -135,7 +155,7 @@ background-color: #464646;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="col-sm-12">
     <H1 class ="TextoDeTitulo">Bienvenido Usuario a nuestra API de detección<br> de posts  de emergencia para Reddit.</H1>
-    <H2 class="TextoNormi"> Por favor introduce en la siguiente caja el mensaje y presiona el botón <br> para saber si se trata de un mensaje de emergencia </H2>
+    <H2 class="TextoNormi"> Por favor introduce en la siguiente caja el mensaje y presiona el botón <br> para saber si se trata de un mensaje de emergencia. </H2>
     </div >
     
     <div class="col-sm-12" >
@@ -144,13 +164,14 @@ background-color: #464646;
         <form action = "/submit" method = "post"  rows="5" cols="50" class="col-sm-12">
         <input type = "text" name = "cajita">
         <input type = "submit">
+        
         </form>
 
     </div>
     <div class="Respuesta" >
         <label for="freeform">El resultado del mensaje es: {{msg}}</label>
     </div> 
- 
+   
     
     
 
