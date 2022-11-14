@@ -155,26 +155,18 @@ background-color: #464646;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="col-sm-12">
     <H1 class ="TextoDeTitulo">Bienvenido Usuario a nuestra API de detección<br> de posts  de emergencia para Reddit.</H1>
-    <H2 class="TextoNormi"> Por favor introduce en la siguiente caja el mensaje y presiona el botón <br> para saber si se trata de un mensaje de emergencia. </H2>
+    <H2 class="TextoNormi"> Por favor anexe el archivo a analizar y presiona el botón <br> para realizar las predicciones en cuestión. </H2>
     </div >
     
     <div class="col-sm-12" >
-        <label for="freeform">Inserte aquí el mensaje:</label>
-        
         <form action = "/file_analisis" method = "post"  rows="5" cols="50" class="col-sm-12">
-        <input type = "file" name = "cajita">
+        <input type = "file" name = "file", id = "file">
         <input type = "submit">
         
         </form>
 
     </div>
-    <div class="Respuesta" >
-        <label for="freeform">El resultado del mensaje es: {{msg}}</label>
-    </div> 
    
-    
-    
-
 </div>
 
 </body>

@@ -100,3 +100,10 @@ def process(string):
     df = pd.DataFrame([string], columns=["processed"])
     data = tokenizador.fit_transform(df["processed"])
     return data
+def process_big(string):
+    pp = preprocessing(string)
+    pp = stem_and_lemmatize(pp)
+    return pp
+def tokenize(df):
+    tokenizador = load("html/static/assets/tokenizador.joblib")
+    return tokenizador.fit_transform(df)

@@ -31,6 +31,7 @@ def handle_form(request:Request, cajita: str = Form(...)):
 
 @app.post("/file_analisis")
 async def handle_form(request:Request, file: UploadFile = File(...)):
+   print("as")
    with open("file.csv","wb") as buffer:
       shutil.copyfileobj(file.file,buffer)
    df=pd.read_csv('file.csv', sep=',', encoding = 'utf-8')
